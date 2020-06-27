@@ -2,16 +2,6 @@
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](http://developer.android.com/index.html)
 
 My way to MVVM pattern using RxJava, LiveData, Room, Paging with the Android databinding
-<br/>
-<br/>
-
-## What is MVVM pattern?
-MVVM is an architectural pattern that was created to simplify user interface programming. 
-Google appears to be encouraging the use of MVVM for data binding. 
-In fact, the Architecture Components of its Data Binding Library are modeled on the MVVM pattern.
-
-<img src="images/databinding.png"/>
-<br/>
 
 ## Samples
 ### Activity Layout File
