@@ -5,21 +5,27 @@
         <variable name="vm" type="com.assignment.feeds.ui.search.FeedViewModel"/>
     </data>
 
+    <FrameLayout
+        style="@style/linearLayoutStyle">
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/linearLayoutStyle"
                 app:refreshing="@{safeUnbox(vm.refreshing)}"
                 app:onRefreshListener="@{() -> vm.refresh()}">
 
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/search_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:viewModel="@{vm}"
-                    app:repositories="@{vm.items}"/>
+                    style="@style/linearLayoutStyle"
+                    android:id="@+id/recyclerView" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            style="@style/linearLayoutStyle"
+            android:id="@+id/tvNoInternet"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/no_internet"/>
+    </FrameLayout>
 
 
 </layout>

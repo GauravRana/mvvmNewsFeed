@@ -8,4 +8,78 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="C" parent="android:Widget.TextView">
+        <item name="android:textColor">#F00</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="CardViewStyle" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_5sdp</item>
+        <item name="android:layout_marginRight">@dimen/_5sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_10sdp</item>
+    </style>
+
+
+    <style name="titleTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:paddingLeft">@dimen/_10sdp</item>
+        <item name="android:paddingRight">@dimen/_10sdp</item>
+        <item name="android:textColor">@color/colorTitle</item>
+    </style>
+
+
+    <style name="descTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.7</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/_5sdp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/colorPost</item>
+    </style>
+
+
+    <style name="imageViewStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">0.3</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+
+    <style name="horizontalLinearStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+    <style name="largeWeightLinearStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.9</item>
+    </style>
+
+    <style name="smallWeightLinearStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.1</item>
+    </style>
+
+    <style name="linearLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+
 </resources>

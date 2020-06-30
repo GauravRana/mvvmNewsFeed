@@ -4,6 +4,7 @@ import android.app.Application
 import android.os.StrictMode
 import com.assignment.feeds.di.apiModule
 import com.assignment.feeds.di.networkModule
+import com.assignment.feeds.di.roomModule
 import com.assignment.feeds.di.viewModelModule
 import org.koin.android.ext.android.startKoin
 
@@ -20,6 +21,7 @@ class MVVMApp : Application() {
         startKoin(this, listOf(
             networkModule,
             apiModule,
+            roomModule,
             viewModelModule
         ))
     }
