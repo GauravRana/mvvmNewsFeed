@@ -8,7 +8,7 @@
             style="@style/horizontalLinearStyle"
             android:background="@drawable/back_gradient">
             <LinearLayout
-               style="@style/largeWeightLinearStyle"
+                style="@style/largeWeightLinearStyle"
                 android:orientation="vertical"
                 android:padding="@dimen/_5sdp">
                 <TextView
@@ -18,12 +18,12 @@
                 <LinearLayout
                     style="@style/horizontalLinearStyle"
                     android:padding="@dimen/_5sdp">
-                        <TextView
-                            style="@style/descTextViewStyle"
-                            android:id="@+id/tvDesc" />
-                        <ImageView
-                            style="@style/imageViewStyle"
-                            android:id="@+id/image" />
+                    <TextView
+                        style="@style/descTextViewStyle"
+                        android:id="@+id/tvDesc" />
+                    <ImageView
+                        style="@style/imageViewStyle"
+                        android:id="@+id/image" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout

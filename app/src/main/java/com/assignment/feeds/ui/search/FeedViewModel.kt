@@ -1,7 +1,7 @@
 package com.assignment.feeds.ui.search
 
-import android.net.ConnectivityManager
-import androidx.core.content.ContextCompat.getSystemService
+
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.assignment.feeds.core.BaseViewModel
@@ -36,6 +36,7 @@ class FeedViewModel(private val api: DataAPI, private val dao: RowDataDao) : Bas
                 titleHeader.value = it.title
             }, {
                 // handle errors
+                Log.d("TAG","handle error")
             })
         )
     }

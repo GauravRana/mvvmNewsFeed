@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.assignment.feeds.ui.search
 
 import android.os.Bundle
@@ -14,6 +16,7 @@ import com.assignment.feeds.ui.BindingActivity
 import kotlinx.android.synthetic.main.activity_feeds.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
+
 class FeedActivity : BindingActivity<ActivityFeedsBinding>()  {
     private var repositoryAdapter: RepositoryAdapter? = null
 
@@ -23,8 +26,8 @@ class FeedActivity : BindingActivity<ActivityFeedsBinding>()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = getViewModel()
-        binding.setLifecycleOwner(this)
-        val viewModel: FeedViewModel = ViewModelProviders.of(this).get(FeedViewModel::class.java)
+        binding.lifecycleOwner = this
+        @Suppress("DEPRECATION") val viewModel: FeedViewModel = ViewModelProviders.of(this).get(FeedViewModel::class.java)
         setAdapter()
         if (isNetworkConnected()) {
             tvNoInternet.visibility = View.GONE
@@ -32,6 +35,7 @@ class FeedActivity : BindingActivity<ActivityFeedsBinding>()  {
         }else {
             tvNoInternet.visibility = View.VISIBLE
         }
+
         viewModel.title.observe(this, Observer<String> {
             it -> supportActionBar!!.title = it
         })

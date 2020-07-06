@@ -15,21 +15,21 @@ data class RowData(
 ) {
     companion object {
         fun to(repository: Rows): RowData {
-            if(repository.title == null){
+            if(repository.title.isNullOrEmpty()){
                 return RowData(
                     title = "",
                     description = repository.description,
                     imageHref = repository.imageHref
                 )
             }
-            if(repository.description == null){
+            if(repository.description.isNullOrEmpty()){
                 return RowData(
                     title = repository.title,
                     description = "" ,
                     imageHref = repository.imageHref
                 )
             }
-            if(repository.imageHref == null){
+            if(repository.imageHref.isNullOrEmpty()){
                 return RowData(
                     title = repository.title,
                     description = repository.description,
