@@ -27,6 +27,6 @@ abstract class BindingActivity<T : ViewDataBinding> : AppCompatActivity() {
     @Suppress("DEPRECATION")
     public fun isNetworkConnected():Boolean {
         val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return cm.activeNetworkInfo != null && cm.activeNetworkInfo.isConnected
+        return cm.activeNetworkInfo!!.isConnected
     }
 }
