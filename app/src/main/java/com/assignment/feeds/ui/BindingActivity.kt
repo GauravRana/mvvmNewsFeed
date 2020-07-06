@@ -5,10 +5,8 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-
 
 abstract class BindingActivity<T : ViewDataBinding> : AppCompatActivity() {
     @LayoutRes
@@ -19,14 +17,17 @@ abstract class BindingActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, getLayoutResId())
     }
 
-
     @Suppress("DEPRECATION")
     public fun isNetworkConnected():Boolean {
-        val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return cm.activeNetworkInfo!!.isConnected
+        try{
+            val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            return cm.activeNetworkInfo!!.isConnected
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
+        return false
     }
 }

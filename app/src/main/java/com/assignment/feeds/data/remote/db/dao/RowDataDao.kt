@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.assignment.feeds.data.remote.db.entity.RowData
 
-
 @Dao
 interface RowDataDao {
-
     @Query("SELECT * FROM RowData")
     fun findAll(): LiveData<List<RowData>>
 
@@ -16,5 +14,4 @@ interface RowDataDao {
 
     @Query("DELETE From RowData")
     fun delete()
-
 }

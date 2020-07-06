@@ -17,6 +17,13 @@ versions.koin = "1.0.2"
 versions.paging = "2.1.0-rc01"
 versions.sdp = "1.0.6"
 versions.glide = "4.11.0"
+versions.mockito = "2.7.19"
+versions.mockito_all = "1.10.19"
+versions.mockito_android = "2.22.0"
+versions.espresso = "3.1.0-alpha4"
+versions.axt_runner = "1.1.0-alpha4"
+versions.axt_rules = "1.1.0-alpha4"
+versions.hamcrest = "2.1"
 
 
 def support = [:]
@@ -57,6 +64,21 @@ koin.architecture = "org.koin:koin-androidx-viewmodel:$versions.koin"
 koin.test = "org.koin:koin-test:$versions.koin"
 
 
+def espresso = [:]
+espresso.core = "androidx.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "androidx.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "androidx.test.espresso:espresso-intents:$versions.espresso"
+
+def axt = [:]
+axt.runner = "androidx.test:runner:$versions.axt_runner"
+axt.rules = "androidx.test:rules:$versions.axt_rules"
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+mockito.android = "org.mockito:mockito-android:$versions.mockito_android"
+
+
 def build_versions = [:]
 build_versions.min_sdk = 21
 build_versions.target_sdk = 29
@@ -78,6 +100,11 @@ deps.glideAnnotation ="com.github.bumptech.glide:compiler:$versions.glide"
 deps.paging_ktx = "androidx.paging:paging-runtime-ktx:$versions.paging"
 deps.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
 deps.junit = "junit:junit:$versions.junit"
+
+deps.mockito = mockito
+deps.axt = axt
+deps.hamcrest = "org.hamcrest:hamcrest:$versions.hamcrest"
+deps.espresso = espresso
 
 ext.build_versions = build_versions
 ext.deps = deps

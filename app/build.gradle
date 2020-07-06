@@ -113,7 +113,24 @@ dependencies {
 
     // Dependencies for local unit tests
     testImplementation deps.junit
+    testImplementation deps.mockito.all
+    testImplementation deps.hamcrest
+    testImplementation deps.kotlin.stdlib
     testImplementation deps.kotlin.test
+    testImplementation deps.koin.test, { exclude group: 'org.mockito' }
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation deps.axt.runner
+    androidTestImplementation deps.axt.rules
+
+    // Dependencies for Android unit tests
+    androidTestImplementation deps.junit
+    androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
+
+    // Espresso UI Testing
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intents
 
     // Resolve conflicts between main and test APK:
     androidTestImplementation deps.support.annotations

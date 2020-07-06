@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="vm" type="com.assignment.feeds.ui.search.FeedViewModel"/>
     </data>
-
-    <FrameLayout
-        style="@style/linearLayoutStyle">
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                style="@style/linearLayoutStyle"
-                app:refreshing="@{safeUnbox(vm.refreshing)}"
-                app:onRefreshListener="@{() -> vm.refresh()}">
-
-            <androidx.recyclerview.widget.RecyclerView
-                    style="@style/linearLayoutStyle"
-                    android:id="@+id/recyclerView" />
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-        <TextView
-            style="@style/linearLayoutStyle"
-            android:id="@+id/tvNoInternet"
-            android:gravity="center"
-            android:visibility="gone"
-            android:text="@string/no_internet"/>
-    </FrameLayout>
-
-
+<FrameLayout
+    android:id="@+id/container_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</FrameLayout>
 </layout>

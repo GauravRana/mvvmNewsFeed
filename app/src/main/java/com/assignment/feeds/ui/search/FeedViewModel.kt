@@ -1,6 +1,5 @@
 package com.assignment.feeds.ui.search
 
-
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,11 +11,7 @@ import com.assignment.feeds.data.remote.domain.Rows
 import com.assignment.feeds.util.NotNullMutableLiveData
 import com.assignment.feeds.util.ioThread
 
-
 class FeedViewModel(private val api: DataAPI, private val dao: RowDataDao) : BaseViewModel() {
-    private val refreshScreen: NotNullMutableLiveData<Boolean> = NotNullMutableLiveData(false)
-    val refreshing: NotNullMutableLiveData<Boolean>
-        get() = refreshScreen
 
     private val itemValue: NotNullMutableLiveData<List<Rows>> = NotNullMutableLiveData(arrayListOf())
     val items: NotNullMutableLiveData<List<Rows>>
@@ -28,9 +23,9 @@ class FeedViewModel(private val api: DataAPI, private val dao: RowDataDao) : Bas
 
     fun refresh() {
         addToDisposable(api.search()
-            .doOnSubscribe { refreshScreen.value = true }
-            .doOnSuccess { refreshScreen.value = false }
-            .doOnError { refreshScreen.value = false }
+            .doOnSubscribe {  }
+            .doOnSuccess {  }
+            .doOnError {  }
             .subscribe({
                 itemValue.value = it.rows
                 titleHeader.value = it.title
@@ -40,6 +35,7 @@ class FeedViewModel(private val api: DataAPI, private val dao: RowDataDao) : Bas
             })
         )
     }
+
 
     fun getAllPosts(): LiveData<List<RowData>> {
         return dao.findAll()

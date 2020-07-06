@@ -10,7 +10,6 @@ import com.assignment.feeds.data.remote.db.AppDatabase.Companion.DB_VERSION
 import com.assignment.feeds.data.remote.db.dao.RowDataDao
 import com.assignment.feeds.data.remote.db.entity.RowData
 
-
 @Database(entities = [RowData::class], version = DB_VERSION, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getRowDataDao(): RowDataDao
