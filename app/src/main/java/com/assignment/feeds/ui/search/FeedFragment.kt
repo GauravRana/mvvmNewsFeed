@@ -68,7 +68,7 @@ class FeedFragment : BindingFragment<FragmentFeedBinding>() {
         }})
 
         viewModel.getAllPosts().observe(activity!!, Observer<List<RowData>> {
-                it -> tvNoInternet!!.visibility = View.GONE
+                it -> if(it.isNotEmpty())tvNoInternet!!.visibility = View.GONE
             swipeRefresh!!.isRefreshing = false
             repositoryAdapter?.setData(it)
         })
